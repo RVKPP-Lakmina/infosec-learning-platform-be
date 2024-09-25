@@ -2,6 +2,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
+import fs from "fs";
 import {
   getCompletedCourseList,
   downloadCourseContent,
@@ -31,6 +33,27 @@ app.post("/start-new-course", startNewCourse);
 
 // COURSE ROUTES
 app.get("/get-course-by-id", getCourseById);
+
+//HELPER ROUTES
+app.post("/reset-courses", (req, res) => {
+  let __dirname = path.resolve();
+  const statementKeysPath = path.join(__dirname, "configs/courses.json");
+  let templateData = fs.readFileSync(statementKeysPath, "utf8");
+  templateData = JSON.parse(templateData);
+
+  templateData = templateData.map((course) => {
+    course.userStatus = {
+      startDate: null,
+      completed: false,
+      prcentageCompleted: 0,
+    };
+    return course;
+  });
+
+  fs.writeFileSync(statementKeysPath, JSON.stringify(templateData));
+
+  return res.status(200).json({ message: "Courses reset" });
+});
 
 //SERVER
 app.listen(PORT, () => {

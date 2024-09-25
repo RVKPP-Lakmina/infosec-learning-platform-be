@@ -5,6 +5,7 @@
     "type": "Security Policies",
     "description": "A password policy enforces rules for creating strong, complex passwords to enhance security.",
     "time": "30 Min",
+    "duration": 1800,
     "videoUrl": "https://www.example.com/video.mp4",
     "imageUrl": "src/assets/images/password-policy.jpg",
     "mandatory": true,
@@ -27,6 +28,7 @@
     "type": "Security Policies",
     "description": "A Physical Security Policy safeguards an organization's assets and facilities from unauthorized access and threats.",
     "time": "1 H",
+    "duration": 3600,
     "videoUrl": "https://www.example.com/video.mp4",
     "imageUrl": "src/assets/images/physical-security-policy.jpg",
     "certificateUrl": "https://www.example.com/certificate/1",
@@ -50,6 +52,7 @@
     "type": "Security Policies",
     "description": "Data security policies protect sensitive information from unauthorized access and breaches.",
     "time": "1 H 30 Min",
+    "duration": 5400,
     "mandatory": true,
     "videoUrl": "https://www.example.com/video.mp4",
     "imageUrl": "src/assets/images/data-protection-policy.jpg",
@@ -73,6 +76,7 @@
     "type": "Security Policies",
     "description": "An Access Control Policy defines rules for restricting access to systems and data based on user roles and authorization levels.",
     "time": "45 Min",
+    "duration": 2700,
     "videoUrl": "https://www.example.com/video.mp4",
     "imageUrl": "src/assets/images/access-control-policy.png",
     "mandatory": false,
@@ -86,7 +90,7 @@
     "userStatus": {
       "completed": false,
       "completionDate": null,
-      "startDate": null,
+      "startDate": "2024-09-25T18:28:52.357Z",
       "prcentageCompleted": 0
     }
   },
@@ -96,6 +100,7 @@
     "type": "Common Attacks",
     "description": "Phishing is a cyber attack where attackers impersonate trusted entities to deceive individuals into revealing sensitive information, such as passwords or financial details.",
     "time": "1 H",
+    "duration": 3600,
     "videoUrl": "https://www.example.com/video.mp4",
     "imageUrl": "src/assets/images/phishing-training.jpg",
     "mandatory": false,
@@ -120,6 +125,7 @@
     "imageUrl": "src/assets/images/incident-response-policy.jpg",
     "description": "An Incident Response Policy provides a framework for detecting, responding to, and recovering from security incidents to minimize impact and restore normal operations quickly.",
     "time": "45 Min",
+    "duration": 2700,
     "mandatory": false,
     "certificateUrl": "https://www.example.com/certificate/1",
     "company": {
