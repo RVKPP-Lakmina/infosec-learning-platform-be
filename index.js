@@ -9,7 +9,7 @@ import {
   downloadCourseContent,
 } from "./services/home.js";
 import { getCourseList, startNewCourse } from "./services/courses.js";
-import { getCourseById } from "./services/course.js";
+import { getCourseById, updateCourseStatus } from "./services/course.js";
 import { login } from "./services/auth.js";
 
 const app = express();
@@ -33,6 +33,7 @@ app.post("/start-new-course", startNewCourse);
 
 // COURSE ROUTES
 app.get("/get-course-by-id", getCourseById);
+app.post("/update-course-status", updateCourseStatus);
 
 //HELPER ROUTES
 app.post("/reset-courses", (req, res) => {
