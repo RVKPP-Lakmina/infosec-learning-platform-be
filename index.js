@@ -37,11 +37,19 @@ app.post("/update-course-status", updateCourseStatus);
 
 //HELPER ROUTES
 app.post("/reset-courses", (req, res) => {
+  // Get the directory name
   let __dirname = path.resolve();
+  
+  // Path to the courses configuration file
   const statementKeysPath = path.join(__dirname, "configs/courses.json");
+  
+  // Read the courses configuration file
   let templateData = fs.readFileSync(statementKeysPath, "utf8");
+  
+  // Parse the JSON data
   templateData = JSON.parse(templateData);
 
+  // Reset the user status for each course
   templateData = templateData.map((course) => {
     course.userStatus = {
       startDate: null,
@@ -51,8 +59,10 @@ app.post("/reset-courses", (req, res) => {
     return course;
   });
 
+  // Write the updated data back to the file
   fs.writeFileSync(statementKeysPath, JSON.stringify(templateData));
 
+  // Send a response indicating success
   return res.status(200).json({ message: "Courses reset" });
 });
 
